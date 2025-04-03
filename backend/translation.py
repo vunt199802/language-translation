@@ -12,7 +12,7 @@ messages = [
         "content":"you are a language translator who can perfectly understand all languages, and your job is to translate the given text to the provided language, provide the translated text only, no explanation or nothing"
     }
 ]
-def translate(query:str, translation_language:str)->str:
+def translate_query(query:str, translation_language:str)->str:
     messages.append({
         "role":"user",
         "content":f"text:{query}, translate_to:{translation_language}"
@@ -22,5 +22,3 @@ def translate(query:str, translation_language:str)->str:
         input=messages
     )
     return response.output_text
-
-print(translate(query="hey, how are you", translation_language="spanish"))
