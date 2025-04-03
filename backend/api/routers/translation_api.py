@@ -11,5 +11,5 @@ def root():
 
 @router.post("/translate")
 async def translate(translation_query:TranslationRequest, translation_service:Translator=Depends(get_translator)):
-    response = translation_service.translate(translation_query.query, translation_query.target_language)
+    response = await translation_service.translate(translation_query.query, translation_query.target_language)
     return {"original_query":translation_query.query, "translated_query":response}
