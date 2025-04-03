@@ -89,7 +89,7 @@ conda activate pollyglot
 
 2. Start the server:
 ```bash
-uvicorn main:app --reload
+python main.py
 ```
 
 The server will start at `http://localhost:8000`
