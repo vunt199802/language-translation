@@ -1,54 +1,112 @@
-# React + TypeScript + Vite
+# PollyGlot Translation Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based frontend for the PollyGlot translation service, built with Vite and TypeScript.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Clean and intuitive user interface
+- Real-time text translation
+- Support for multiple languages:
+  - French 🇫🇷
+  - Spanish 🇪🇸
+  - Japanese 🇯🇵
+- Responsive design
+- Loading states and animations
+- Error handling
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js 14.0 or higher
+- npm or yarn
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd language-translation/frontend/languate_translator
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
 ```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── TranslationCard.tsx
+│   └── LanguageSelector.tsx
+├── App.tsx
+├── main.tsx
+└── index.css
+```
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm run dev`
+
+Runs the app in development mode.\
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+
+### `npm run build`
+
+Builds the app for production to the `dist` folder.
+
+### `npm run preview`
+
+Locally preview the production build.
+
+## Usage
+
+1. Enter the text you want to translate in the input field
+2. Select your target language from the available options
+3. Click the "Translate" button
+4. View your translation result
+5. Use "Start Over" to begin a new translation
+
+## Environment Setup
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+## Features in Detail
+
+### Translation Card Component
+- Handles both input and display of text
+- Supports multiline text input
+- Responsive design for all screen sizes
+
+### Language Selector Component
+- Radio button selection for languages
+- Includes country flags
+- Easy to extend for additional languages
+
+### Main Application
+- Three-state view system:
+  1. Input view
+  2. Loading view
+  3. Result view
+- Smooth transitions between states
+- Error handling and user feedback
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
